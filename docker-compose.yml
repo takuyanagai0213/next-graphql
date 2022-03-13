@@ -3,6 +3,7 @@ services:
   next:
     build: .
     ports:
-    - "5000:5000"
+    - "3000:3000"
     volumes:
     - .:/usr/src/app
+    tty: true
