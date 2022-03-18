@@ -4,6 +4,16 @@ services:
     build: .
     ports:
     - "3000:3000"
+    - "5555:5555"
     volumes:
     - .:/usr/src/app
     tty: true
+  db:
+    image: postgres:11-alpine
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: test
+      LANG: ja_JP.utf8
